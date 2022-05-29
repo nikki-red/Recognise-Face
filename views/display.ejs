@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Display</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+  			background-color: #444941;
+  		}
+      .table-wrapper {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+  		.title-container, .container {
+  			text-align: center;
+  			font-family: monospace;
+  			color: #ffffff;
+  		}
+  		.title {
+  			background-color:#5F7A61;
+  			text-align: center;
+  			padding: 20px 20px;
+  			font-family: Courier New;
+  			font-weight: bolder;
+  			border-radius: 10px;
+  			color: black;
+  		}
+      .container {
+        margin-top: 20px;
+        border: 3px solid #5F7A61;
+        border-collapse: collapse
+      }
+      .container td, .container th {
+        text-align: center;
+        padding: 8px;
+        border-bottom: 3px solid #5F7A61;
+      }
+      .container td {
+        border-right: 1px solid #f8f8f8;
+        border-left: 1px solid #f8f8f8;
+
+        font-size: 15px;
+      }
+      .container thead th {
+        color: #ffffff;
+        background: #B2AB8C;
+        font-size: 17px;
+        padding: 10px;
+      }
+      .name, .id_no {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title-container">
+      <h1 class="title">Missing Identity List</h1>
+    </div>
+    <div class="table-wrapper">
+      <table class="container">
+         <thead>
+           <tr class="tablehead">
+             <th scope="col">Name</th>
+             <th scope="col">ID number</th>
+             <th scope="col">Gender</th>
+             <th scope="col">Date of Birth</th>
+             <th scope="col">
+               Found?
+             </th>
+           </tr>
+         </thead>
+         <tbody>
+         <%formsList.forEach(form => {%>
+             <tr>
+                 <td scope="row"><%= form.name %></td>
+                 <td><%= form.id_no %></td>
+                 <td><%= form.gender %></td>
+                 <td><%= form.birthdate %></td>
+                 <td>
+                   <form name="myform" id="myform" action="/display"  method="post" >
+                      <input type="text" class="name" name="name" id="name" value="" placeholder="Enter Name" autocomplete="off" required />
+                      <input type="number" class="id_no" name="id_no" id="id_no" value="" placeholder="Enter ID no" min="0" required autocomplete="off" />
+                      <button type="submit" id="submit" name="submit" value="" class="registerbtn" >Yes</button>
+                   </form>
+                  </td>
+             </tr>
+         <%})%>
+         </tbody>
+       </table>
+    </div>
+  </body>
+</html>

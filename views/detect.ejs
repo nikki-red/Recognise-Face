@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Detection</title>
+    <style>
+        body {
+          background-color: #444941;
+        }
+        .body {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+        canvas{
+          border: thick solid #75705e;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .title-container {
+    			text-align: center;
+    			font-family: monospace;
+    			color: #ffffff;
+    		}
+        .title {
+    			background-color:#5F7A61;
+    			text-align: center;
+    			padding: 20px 20px;
+    			font-family: Courier New;
+    			font-weight: bolder;
+    			border-radius: 10px;
+    			color: black;
+    		}
+        .container, .info {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 10px;
+          margin-bottom: 60px;
+        }
+        #myImg{
+          height:350px;
+        }
+        .file {
+          width: 0.1px;
+          height: 0.1px;
+          opacity: 0;
+          overflow: hidden;
+          position: absolute;
+        }
+        .file + label {
+          font-family: Courier New;
+          font-weight: bold;
+          color: #ffffff;
+          font-size: 15px;
+          background: #B2AB8C;
+          display: inline-block;
+          padding: 10px;
+          border-radius: 10px;
+        }
+        .file:focus + label, .file + label:hover {
+          background: #75705e;
+          text-decoration: none;
+        }
+        .file + label {
+          cursor: pointer;
+        }
+        .missing {
+          font-family: monospace;
+          text-decoration: underline;
+        }
+        .info {
+          margin-left: 20px;
+        }
+        ul {
+          font-family: monospace;
+          font-size: 17px;
+          color: #EEEEEE;
+          font-weight: bold;
+          list-style-type: none;
+          padding-inline-start: 0px;
+        }
+        li {
+          text-align: center;
+          margin: 10px 0;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="title-container">
+      <h1 class="title">Recognising Missing Identities</h1>
+    </div>
+    <div class="body">
+      <input class="file" name="file" type="file" id="file" accept=".jpg" onchange="recogFace()">
+      <label for="file">Choose a file</label>
+    </div>
+    <div class="container">
+      <img src="" id="myImg">
+    </div>
+    <div class="info">
+      <h1 class="missing">Missing Identities</h1>
+      <div class="names"></div>
+      <ul id="list" name="list"></ul>
+    </div>
+    <script>var titles = "<%= titles %>";</script>
+    <script  src="./js/face-api.min.js"></script>
+    <script defer async src="./js/script.js"></script>
+  </body>
+</html>

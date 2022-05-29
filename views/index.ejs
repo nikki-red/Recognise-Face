@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Engage Face Recog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+  			background-color: #444941;
+  		}
+      .container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 5px solid #5F7A61;
+        padding: 10px;
+      }
+      .btn-group {
+        display: block;
+      }
+      .btn {
+        -webkit-border-radius: 10;
+        -moz-border-radius: 10;
+        border: none;
+        border-radius: 10px;
+        font-family: Courier New;
+        font-weight: bold;
+        color: #ffffff;
+        font-size: 20px;
+        background: #B2AB8C;
+        height: 60px;
+        width: 352.052px;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .btn:hover {
+        background: #75705e;
+        text-decoration: none;
+      }
+      .btn{
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="btn-grp">
+        <button type="button" class="btn btn-primary btn-lg" onclick="location.href='uploadform'" style="margin-bottom: 10px">Register Missing Identity</button>
+        <button type="button" class="btn btn-primary btn-lg" onclick="location.href='detect'" style="margin-bottom: 10px">Missing Idenity Detection</button>
+        <button type="button" class="btn btn-primary btn-lg" onclick="location.href='display'">List of Missing Identities</button>
+      </div>
+    </div>
+  </body>
+</html>

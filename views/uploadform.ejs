@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+	  <meta charset="UTF-8">
+	  <title>Register</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+		body {
+			background-color: #444941;
+		}
+		.title-container, .container {
+			text-align: center;
+			font-family: monospace;
+			color: #ffffff;
+		}
+		.title {
+			background-color:#5F7A61;
+			text-align: center;
+			padding: 20px 20px;
+			font-family: Courier New;
+			font-weight: bolder;
+			border-radius: 10px;
+			color: black;
+		}
+		.mark_textbox {
+			width: 200%;
+		}
+		.div_form {
+			background-color: #B2AB8C;
+			padding: 20px;
+			border-radius: 5px;
+			margin:auto;
+			width: 53%;
+			font-family: monospace;
+		}
+		</style>
+  </head>
+  <body>
+		<div class="title-container">
+      <h1 class="title">Register Missing Identity</h1>
+      <h2>Enter the necessary details</h2>
+      <h3><a style="color:red">*</a> Required Fields to be filled</h3>
+    </div>
+	  <div class="div_form">
+			<form name="myform" id="myform" action="/uploadform"  method="post" enctype="multipart/form-data">
+			  <table class="table_form">
+					<tr>
+            <td><label for="name"><b>Name <a style="color:red">*</a>:</b></label></td>
+            <td><input type="text" name="name" id="name" value="" placeholder="Enter Name" autocomplete="off" required /></td>
+          </tr>
+					<tr>
+            <td><label for="id"><b>ID number <a style="color:red">*</a>:</b></label></td>
+            <td><input type="number" name="id_no" id="id_no" value="" placeholder="Enter ID no" min="0" required /></td>
+          </tr>
+          <tr>
+            <td><label for="gender"><b>Gender <a style="color:red">*</a>: </b></label></td>
+            <td>
+              <div class="gender-options">
+                <label for="male" class="radio-inline"><input type="radio" name="gender" id="male" value="male"/>Male</label>
+                <label for="female" class="radio-inline"><input type="radio" name="gender" id="female" value="female"/>Female</label>
+                <label for="other" class="radio-inline"><input type="radio" name="gender" id="other" value="other"/>Other</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="birth-date"><b>Date of Birth <a style="color:red">*</a>: </b></label></td>
+            <td><input type="date" id="birthdate" name="birthdate" min="1981-01-01"/></td>
+          </tr>
+          <tr>
+            <td><label for="nationality"><b>Nationality: </b></label></td>
+            <td><input type="text" placeholder="Enter Nationality" name="nationality"/></td>
+          </tr>
+          <tr>
+            <td><label for="height"><b>Height (Approx): </b></label></td>
+            <td><input type="number" placeholder="Enter height in ft" name="height"/></td>
+          </tr>
+          <tr>
+            <td><label for="weight"><b>Weight (Approx): </b></label></td>
+            <td><input type="number" placeholder="Enter weight in kg" name="weight"/></td>
+          </tr>
+          <tr>
+            <td><label for="mark"><b>Identification Mark: </b></label></td>
+            <td><input type="text" placeholder="Enter Identification Mark (eg: Birthmark, Mole, etc.)" name="mark" id="mark" class="mark_textbox"/></td>
+          </tr>
+					<tr>
+					  <td><label for="file"><b>Upload Image <a style="color:red">*</a>: </b></label></td>
+					  <td><input type="file" name="image" id="image" value="" accept="image/*"  required></td>
+				  </tr>
+		    </table>
+        <p style="font-size: 10px">(File to be named as per name filled above)</p>
+				<div class="container">
+					<br/>
+					<button type="submit" id="submit" name="submit" value="" class="registerbtn" >Register</button>
+				</div>
+		  </form>
+	  </div>
+  </body>
+</html>
